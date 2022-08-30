@@ -1,8 +1,8 @@
 class Node:
     def __init__(self, data=None):
         self.data = data
-        self.previous = self
-        self.next = self
+        self.previous = None
+        self.next = None
 
 
 class DoublyCircularLinkedList:
