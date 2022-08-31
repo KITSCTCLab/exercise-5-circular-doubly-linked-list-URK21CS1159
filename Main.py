@@ -16,24 +16,24 @@ class DoublyCircularLinkedList:
         if self.head is None: 
             newNode = Node(data)
             self.head = newNode  
-            return
+            return True
         n = self.head
         while n.next is not None:
             n = n.next
         newNode = Node(data)
         n.next = newNode
         newNode.previous = n  
-        return True
+        
            
     def add_at_head(self, data) -> bool:
         newNode = Node(data)
         if(self.head == None):
            self.head = newNode;
-           return 
+           return True
         self.head.previous = newNode
         newNode.next = self.head
         self.head = newNode
-        return True
+        
 
         
     def add_at_index(self, index, data) -> bool:
