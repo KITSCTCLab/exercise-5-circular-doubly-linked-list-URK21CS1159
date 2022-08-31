@@ -77,11 +77,11 @@ class DoublyCircularLinkedList:
               break
             temp = temp.next
           if(found == 1):
-               print(searchValue,"is found at index =", i)
+              return True
           else:
-               print(searchValue,"is not found in the list.")
+              return False
         else:
-             print("The list is empty.")
+             return False
 
     def delete_at_index(self, index) -> bool:
         # Write code here
