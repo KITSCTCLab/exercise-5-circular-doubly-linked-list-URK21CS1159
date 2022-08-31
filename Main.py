@@ -26,6 +26,9 @@ class DoublyCircularLinkedList:
            
     def add_at_head(self, data) -> bool:
         newNode = Node(data)
+        if(self.head == None):
+           self.head = newNode;
+           return
         self.head.previous = newNode
         newNode.next = self.head
         self.head = newNode
