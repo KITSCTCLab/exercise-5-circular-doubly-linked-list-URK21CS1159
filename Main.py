@@ -22,16 +22,18 @@ class DoublyCircularLinkedList:
             n = n.next
         newNode = Node(data)
         n.next = newNode
-        newNode.previous = n   
+        newNode.previous = n  
+        return true
            
     def add_at_head(self, data) -> bool:
         newNode = Node(data)
         if(self.head == None):
            self.head = newNode;
-           return
+           return 
         self.head.previous = newNode
         newNode.next = self.head
         self.head = newNode
+        return true
 
         
     def add_at_index(self, index, data) -> bool:
@@ -39,11 +41,12 @@ class DoublyCircularLinkedList:
 
   
            if(index < 1):
-              print("\nposition should be >= 1.")
+              return false
            elif (index == 1):
               newNode.next = self.head
               self.head.previous = newNode
               self.head = newNode
+              return true
            else:    
               temp = self.head
               for i in range(1, index-1):
@@ -57,8 +60,9 @@ class DoublyCircularLinkedList:
                  temp.next = newNode  
                   if (newNode.next != None):
                      newNode.next.previous = newNode
+                     return true
               else:
-                  print("\nThe previous node is null.") 
+                  return false
 
     def get(self, index) -> int:
         # Write code here
