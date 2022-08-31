@@ -85,9 +85,9 @@ class DoublyCircularLinkedList:
 
     def delete_at_index(self, index) -> bool:
         # Write code here
-        if(position < 1):
+        if(index < 1):
               print("\nposition should be >= 1.")
-        elif (position == 1 and self.head != None):
+        elif (index == 1 and self.head != None):
              nodeToDelete = self.head
              self.head = self.head.next
              nodeToDelete = None
@@ -95,7 +95,7 @@ class DoublyCircularLinkedList:
                 self.head.prev = None
         else:    
             temp = self.head
-            for i in range(1, position-1):
+            for i in range(1, index-1):
                if(temp != None):
                   temp = temp.next   
     
