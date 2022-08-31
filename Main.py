@@ -32,19 +32,18 @@ class DoublyCircularLinkedList:
 
         
     def add_at_index(self, index, data) -> bool:
-        # Write code here
          newNode = Node(data)
 
   
-           if(position < 1):
+           if(index < 1):
               print("\nposition should be >= 1.")
-           elif (position == 1):
+           elif (index == 1):
               newNode.next = self.head
               self.head.previous = newNode
               self.head = newNode
            else:    
               temp = self.head
-              for i in range(1, position-1):
+              for i in range(1, index-1):
                  if(temp != None):
                     temp = temp.next   
     
