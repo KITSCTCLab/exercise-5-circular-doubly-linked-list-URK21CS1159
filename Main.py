@@ -25,15 +25,11 @@ class DoublyCircularLinkedList:
         newNode.previous = n   
            
     def add_at_head(self, data) -> bool:
-        # Write code here
-         newNode = Node(data)
-         if(self.head == None):
-            self.head = newNode
-            return
-         else:
-            self.head.prev = newNode
-            newNode.next = self.head
-            self.head = newNode
+        newNode = Node(data)
+        self.head.previous = newNode
+        newNode.next = self.head
+        self.head = newNode
+
         
     def add_at_index(self, index, data) -> bool:
         # Write code here
