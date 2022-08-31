@@ -12,16 +12,17 @@ class DoublyCircularLinkedList:
 
     def add_at_tail(self, data) -> bool:
         # Write code here
-        newNode = Node(data);    
-        if(self.head == None):    
-            self.head = self.tail = newNode;    
-            self.head.previous = None;   
-            self.tail.next = None;    
-        else:    
-            self.tail.next = newNode;    
-            newNode.previous = self.tail;   
-            self.tail = newNode;    
-            self.tail.next = None;   
+          
+        if(self.head == None): 
+            newNode = Node(data)
+            self.head = newNode  
+            return
+        n = self.head
+        while n.next is not None:
+            n = n.next
+        newNode = Node(data)
+        n.next = newNode
+        newNode.previous = n   
            
     def add_at_head(self, data) -> bool:
         # Write code here
